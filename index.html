@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shameth Fernando - Creative & Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f0f2f5; /* Lighter background for depth */
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+
+        a {
+            color: #4a90e2; /* A more vibrant blue */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2d6da8;
+            text-decoration: underline;
+        }
+
+        .button {
+            display: inline-block;
+            color: #fff;
+            background: #4a90e2;
+            padding: 14px 30px;
+            margin-top: 30px;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3); /* Softer shadow */
+        }
+
+        .button:hover {
+            background: #2d6da8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            color: #333;
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* More pronounced shadow */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            font-family: 'Playfair Display', serif; /* Serif font for title */
+            font-weight: 700;
+        }
+
+        header h1 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        header nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        header nav li {
+            display: inline-block;
+            margin-left: 35px;
+        }
+
+        header nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            position: relative; /* For active link indicator */
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        /* Active link indicator (optional, needs JS for full effect) */
+        header nav a.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background-color: #4a90e2;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #4a90e2, #2d6da8); /* Deeper blue gradient */
+            color: #fff;
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 40px; /* More prominent curve */
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInScale 1.8s ease-out; /* Slower, more impactful animation */
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255,255,255,0.9); /* Thicker, brighter border */
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Stronger shadow */
+            transition: transform 0.5s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1) rotate(2deg); /* More dynamic hover */
+        }
+
+        #hero h2 {
+            font-size: 3.8em;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        #hero p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 0;
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 15px rgba(0,0,0,0.03); /* Subtle internal shadow */
+        }
+
+        section:nth-of-type(even) {
+            background: #f9f9f9;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 3.2em;
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: #4a90e2;
+            border-radius: 3px;
+        }
+
+        /* About Section */
+        #about .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 60px; /* Increased gap */
+        }
+
+        #about .about-text {
+            flex: 2;
+            min-width: 320px;
+            text-align: justify;
+            padding: 20px; /* Inner padding */
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Soft shadow */
+        }
+
+        #about .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.15em;
+            color: #555;
+        }
+
+        #about .about-image {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+
+        #about .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* More prominent image shadow */
+            transition: transform 0.4s ease;
+        }
+
+        #about .about-image img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            text-align: center;
+        }
+
+        .skill-item {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-top: 5px solid #4a90e2; /* Thicker accent line */
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .skill-item h3 {
+            color: #4a90e2;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .skill-item p {
+            font-size: 1.05em;
+            color: #666;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 45px; /* Increased gap */
+        }
+
+        .portfolio-item {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 18px; /* More rounded */
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12); /* Deeper shadow */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px; /* Slightly taller images */
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #f0f0f0;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05); /* Zoom effect on image hover */
+        }
+
+        .portfolio-item-content {
+            padding: 30px; /* More padding */
+        }
+
+        .portfolio-item h3 {
+            margin: 0 0 12px;
+            color: #333;
+            font-size: 2em; /* Larger project titles */
+            font-weight: 700;
+        }
+
+        .portfolio-item p {
+            margin: 0 0 25px;
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .portfolio-item .button {
+            display: block;
+            text-align: center;
+            margin: 0;
+            padding: 12px 0;
+            font-size: 0.95em;
+            border-radius: 10px;
+        }
+
+        /* Contact Section */
+        #contact .contact-info {
+            text-align: center;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        #contact .contact-info p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        #contact .contact-info a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        #contact .contact-info a:hover {
+            color: #2d6da8;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50; /* Darker, more professional footer */
+            color: #ecf0f1;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 0;
+            font-size: 1em;
+            border-top: 5px solid #4a90e2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+
+            header nav ul {
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            header nav li {
+                margin: 0 15px 15px;
+            }
+
+            #hero {
+                padding: 100px 0;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+
+            #hero h2 {
+                font-size: 3em;
+            }
+
+            #hero p {
+                font-size: 1.2em;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            section h2 {
+                font-size: 2.5em;
+                margin-bottom: 50px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .skills-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #about .about-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            #about .about-text {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header nav a {
+                font-size: 1em;
+            }
+
+            #hero h2 {
+                font-size: 2.5em;
+            }
+
+            #hero p {
+                font-size: 1em;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            section h2 {
+                font-size: 2.2em;
+            }
+
+            .portfolio-item-content {
+                padding: 25px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* JavaScript-controlled animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out; /* Slower transition */
+        }
+
+        .fade-in-section.is-visible { /* Changed class name for clarity */
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="#">Shameth Fernando</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="your-photo.jpg" alt="Shameth Fernando" class="profile-pic">
+                <h2>Innovating Digital Experiences with Shameth Fernando</h2>
+                <p>As a **passionate Web Developer**, I craft dynamic, user-friendly, and visually stunning web solutions. I transform complex ideas into intuitive digital realities.</p>
+                <a href="#portfolio" class="button">Explore My Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="fade-in-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm Shameth Fernando, a dedicated and creative web developer with a proven track record in building compelling online presences. My expertise lies in front-end development, where I blend **pixel-perfect design with robust functionality**. I thrive on challenges and am committed to delivering high-quality, scalable web applications.
+                    </p>
+                    <p>
+                        My proficiency spans across core web technologies including **HTML5, CSS3, and advanced JavaScript (ES6+)**. I am adept at creating responsive layouts that look flawless on any device, and I have a strong understanding of UI/UX principles to ensure an exceptional user journey. I continuously explore new tools and frameworks to stay ahead in this dynamic field.
+                    </p>
+                    <p>
+                        When I'm not coding, you'll find me [mention 1-2 unique, professional-sounding hobbies that might hint at creativity or problem-solving, e.g., 'experimenting with graphic design tools, diving deep into technical documentation, or contributing to online coding communities']. This holistic approach fuels my creativity and problem-solving abilities in my professional work.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="your-about-image.jpg" alt="Shameth Fernando - Professional Profile">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="fade-in-section">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Front-End Development</h3>
+                    <p>Expertise in HTML5 semantics, advanced CSS3 (Flexbox, Grid, Animations), and responsive design principles for diverse devices.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>JavaScript & DOM Manipulation</h3>
+                    <p>Proficient in modern JavaScript (ES6+), creating interactive user interfaces and dynamic content experiences.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>UI/UX Design Principles</h3>
+                    <p>Strong understanding of user-centered design, wireframing, prototyping, and ensuring intuitive user experiences.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Version Control (Git & GitHub)</h3>
+                    <p>Collaborative development, code management, and project versioning best practices.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Performance Optimization</h3>
+                    <p>Strategies for improving website speed, loading times, and overall user performance.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>[Add another specific, strong skill, e.g., 'Web Accessibility Standards' or 'Basic Node.js/API Integration']</h3>
+                    <p>[Detailed description of this skill, focusing on its impact or your proficiency.]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="fade-in-section">
+        <div class="container">
+            <h2>Showcased Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="project1.jpg" alt="Project 1 - E-commerce Redesign">
+                    <div class="portfolio-item-content">
+                        <h3>Modern E-commerce Platform</h3>
+                        <p>Led the front-end development for a high-performance e-commerce site, focusing on a seamless checkout flow and mobile-first design. Utilized HTML5, SCSS, and vanilla JavaScript.</p>
+                        <a href="#" target="_blank" class="button">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project2.jpg" alt="Project 2 - Interactive Dashboard">
+                    <div class="portfolio-item-content">
+                        <h3>Interactive Analytics Dashboard</h3>
+                        <p>Developed a data visualization dashboard with dynamic charts and filter options for real-time insights. Implemented using HTML, CSS, and D3.js for interactive elements.</p>
+                        <a href="#" target="_blank" class="button">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project3.jpg" alt="Project 3 - Corporate Website">
+                    <div class="portfolio-item-content">
+                        <h3>Responsive Corporate Website</h3>
+                        <p>Designed and built a multi-page corporate website, enhancing brand presence with engaging animations and a user-friendly content management system integration. HTML, CSS, JavaScript (jQuery).</p>
+                        <a href="#" target="_blank" class="button">View Project</a>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in-section">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <div class="contact-info">
+                <p>I'm enthusiastic about new opportunities and collaborations that push the boundaries of web development. Whether you have a project in mind, a question, or just want to say hello, feel free to reach out!</p>
+                <p>Email: <a href="mailto:your.email@example.com">**your.email@example.com**</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">**linkedin.com/in/yourprofile**</a></p>
+                <p>GitHub: <a href="https://github.com/yourusername" target="_blank">**github.com/yourusername**</a></p>
+                <p><a href="your-resume.pdf" download class="button">Download My Resume</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Shameth Fernando. All rights reserved. Crafted with passion.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Section becomes visible when 15% is in view
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible'); // Use 'is-visible' class
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Optional: Smooth scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Optional: Highlight active navigation link based on scroll position
+            const navLinks = document.querySelectorAll('header nav a');
+            window.addEventListener('scroll', () => {
+                let currentSection = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.href.includes(currentSection)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
